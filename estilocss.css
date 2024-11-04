@@ -1,0 +1,278 @@
+:root {
+    --cor_principal: #f3df1f;
+    /* Definindo a variável CSS */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4eed8;
+    color: #333;
+    font-size: 16px;
+    /* Ajuste de fonte base */
+}
+
+header {
+    background-color: var(--cor_principal);
+    /* Usando a variável CSS */
+    color: black;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#logo_completa {
+    max-width: 150px;
+    /* Dimensões adequadas para celular */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2 {
+    margin-bottom: 20px;
+}
+
+.form-section {
+    margin-bottom: 40px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #2980b9;
+}
+
+.anuncios-section {
+    margin-top: 40px;
+}
+
+.anuncios-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.anuncio {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.anuncio img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.anuncio p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.anuncio h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.anuncio .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.anuncio .toggle-switch {
+    display: flex;
+    align-items: center;
+}
+
+.anuncio input[type="checkbox"] {
+    display: none;
+}
+
+.anuncio input[type="checkbox"]+label {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.anuncio input[type="checkbox"]:checked+label {
+    background-color: #4caf50;
+}
+
+.anuncio input[type="checkbox"]+label::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.anuncio input[type="checkbox"]:checked+label::after {
+    transform: translateX(26px);
+}
+
+.anuncio.disabled {
+    opacity: 0.5;
+}
+
+.delete-button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--cor_principal);
+    color: black;
+    width: 100%;
+    bottom: 0;
+}
+
+.edit-button {
+    background-color: #f39c12;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-button:hover {
+    background-color: #e67e22;
+}
+
+.cancel-button {
+    background-color: #95a5a6;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Responsividade para celulares */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    #logo_completa {
+        max-width: 120px;
+        /* Reduz o tamanho do logo em telas pequenas */
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    main {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .submit-button,
+    .cancel-button,
+    .delete-button,
+    .edit-button {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 12px;
+        /* Botões maiores para toque em celulares */
+    }
+
+    .anuncios-container {
+        grid-template-columns: 1fr;
+        /* Exibe um anúncio por linha em telas pequenas */
+    }
+
+    .actions {
+        display: flex; /* Ativa o flexbox */
+        gap: 10px; /* Define o espaçamento entre os itens */
+    }
+    
+    .fotos {
+        display: flex;
+        /* Ativa o flexbox */
+        align-items: center;
+        /* Centraliza verticalmente */
+        justify-content: center;
+        /* Centraliza horizontalmente */
+        flex-wrap: wrap;
+        /* Para garantir que várias imagens se alinhem corretamente */
+        gap: 10px;
+        /* Espaço entre as imagens (opcional) */
+    }
+
+    .fotos img {
+        max-width: 100%;
+        /* Garante que as imagens se ajustem ao contêiner, se necessário */
+        height: auto;
+    }
+}
+
+#tamanhos {
+    overflow-y: auto;
+}

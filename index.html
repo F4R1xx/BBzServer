@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilocss.css" media="screen"/>
+    <script src="connection.js" defer type="module"></script>
+    <link rel="icon" href="logo.png" type="image/png">
+    <title>BBz Imports - Cadastro</title>
+    <style>
+        .size-button {
+            padding: 5px 10px;
+            margin: 2px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+        .size-button.active {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><img src="logo_completa.png" alt="BBz Imports Logo" id="logo_completa"> 
+            Cadastro e Gerenciamento de Anúncios</h1>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2 id="formTitle">Cadastrar Novo Anúncio</h2>
+            <form id="anuncioForm">
+                <div class="form-group">
+                    <label for="modelo">Modelo:</label>
+                    <input type="text" id="modelo" name="modelo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="preco">Preço:</label>
+                    <input type="number" id="preco" name="preco" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Tamanhos:</label>
+                    <div id="tamanhos" class="size-buttons">
+                        <button type="button" class="size-button" value="PP">PP</button>
+                        <button type="button" class="size-button" value="P">P</button>
+                        <button type="button" class="size-button" value="M">M</button>
+                        <button type="button" class="size-button" value="G">G</button>
+                        <button type="button" class="size-button" value="GG">GG</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="fotos">Fotos:</label>
+                    <input type="file" id="fotos" name="fotos" multiple accept="image/*">
+                </div>
+
+                <button type="submit" class="submit-button" id="submitButton">Cadastrar Anúncio</button>
+                <button type="button" class="cancel-button" id="cancelEditButton" style="display:none;">Cancelar Edição</button>
+                <p id="status"></p>
+            </form>
+        </section>
+
+        <section class="anuncios-section">
+            <h2>Lista de Anúncios</h2>
+            <div id="anunciosContainer" class="anuncios-container">
+                <!-- Anúncios serão exibidos aqui -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 BBZ Imports</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.size-button').forEach(button => {
+            button.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+
+        // Assuming your existing script is included after this script block.
+    </script>
+</body>
+</html>
