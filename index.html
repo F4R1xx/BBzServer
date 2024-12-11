@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="estilocss.css" media="screen"/>
-    <script src="connection.js" defer type="module"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.0/firebase-database.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.0/firebase-storage.js" defer></script>
+    <script src="connection.js" type="module" defer></script>
     <link rel="icon" href="logo.png" type="image/png">
     <title>BBz Imports - Cadastro</title>
     <style>
@@ -76,13 +79,14 @@
     </footer>
 
     <script>
-        document.querySelectorAll('.size-button').forEach(button => {
-            button.addEventListener('click', function() {
-                this.classList.toggle('active');
+        document.addEventListener('DOMContentLoaded', function() {
+            const sizeButtons = document.querySelectorAll('.size-button');
+            sizeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    button.classList.toggle('active');
+                });
             });
         });
-
-        // Assuming your existing script is included after this script block.
     </script>
 </body>
 </html>
